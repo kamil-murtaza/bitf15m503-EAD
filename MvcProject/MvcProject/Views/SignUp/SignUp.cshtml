@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href=@Url.Content("/Signup/css/animate.css")>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href=@Url.Content("/Signup/css/style.css")>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+                <h1 id="title" class="hidden"><span id="logo"></span></h1>
+            </div>
+            <div class="login-box animated fadeInUp">
+                <div class="box-header">
+                    <h2>SIGN UP</h2>
+                </div>
+                <label for="username">Username</label>
+                <br />
+                <input type="text" id="username">
+                <br />
+
+                <label for="username">E-MAIL</label>
+                <br />
+                <input type="text" id="email">
+                <br />
+
+
+                <label for="username">PASSWORD</label>
+                <br />
+                <input type="text" id="password">
+                <br />
+
+
+                <label for="password">CONFIRM PASSWORD</label>
+                <br />
+                <input type="password" id="password">
+                <br />
+                <button type="submit">Sign UP</button>
+                <br />
+            </div>
+        </div>
+        @RenderBody()
+    </body>
+<script>
+    $(document).ready(function () {
+        $('#logo').addClass('animated fadeInDown');
+        $("input:text:visible:first").focus();
+    });
+    $('#username').focus(function () {
+        $('label[for="username"]').addClass('selected');
+    });
+    $('#username').blur(function () {
+        $('label[for="username"]').removeClass('selected');
+    });
+    $('#password').focus(function () {
+        $('label[for="password"]').addClass('selected');
+    });
+    $('#password').blur(function () {
+        $('label[for="password"]').removeClass('selected');
+    });
+</script>
+</html>
